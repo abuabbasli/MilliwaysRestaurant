@@ -9,14 +9,13 @@ All classes must reside in the package named it.polito.oop.milliways.
 The class named Main in package main contains examples using the main methods.
 
 
-R1: Races
 
 The facade class for the system is Restaurant through which all objects are created.
 The class Race represents a race in the multiverse. Each race has a unique name, specified as argument to the factory method defineRace() in class Restaurant; if the same name is specified when creating two objects the exception MilliwaysException is thrown. The method returns an object of class Race. The method getName returns the name of the race.
 
 A race has certain requirements. A requirements is a String, such as "Class M atmosphere (nitrogen-oxygen)", or "Low gravity (less than 2g)". The requirements for a given race are specified using the method addRequirement; if the same requirement is added more than once, the method throws the exception MilliwaysException. The method getRequirements returns the list of all requirements for the race, sorted alphabetically.
 
-R2: Party
+
 
 The class Party represents a group of table companions. A new party can be created by means of the method createParty() in class Restaurant.
 
@@ -28,7 +27,7 @@ The method getRequirements() return a list of all the requirements for the party
 
 The method getDescription() returns the composition of the party as a Map having the races names as keys and their relative numbers as values.
 
-R3: Hall
+
 
 The class Hall represents a hall at Milliways. Halls have infinity capacity and a certain number of facilities. Each hall has a unique numeric id, specified when an object is created using method defineHall() in class Restaurant. If the same id is specified when creating two objects the exception MilliwaysException is thrown; the method getId() returns the id of a hall.
 
@@ -36,7 +35,7 @@ The method addFacility() add a facility to the hall. A facility is represented b
 
 The method isSuitable check whether a party may be accommodated in the hall, that is, all its requirements are satisfied by the hall’s facilities. A facility meets a requirement when the strings describing them are equal.
 
-R4: Restaurant
+
 
 The class Restaurant represent the whole Milliways, and it is used to record the parties.
 
@@ -44,7 +43,7 @@ The method getHallList() returns the list of all halls, in the order they have b
 
 The method seat() called with two arguments, accommodates the given party in the given hall; if the hall was not suitable for the party (i.e. isSuitable() is false), the exception MilliwaysException is thrown. When seat is invoked with only the party as argument, it scans all the halls in the restaurant and accommodates the party in the first suitable one. Halls are checked in order they have been added, and if not suitable hall is found, the exception MilliwaysException is thrown. Both methods returns the hall where the party has been successfully seated.
 
-R5: Stats
+
 
 Class Restaurant provides a few methods to compute stats on the Milliways.
 
