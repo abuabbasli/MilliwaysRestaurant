@@ -23,8 +23,7 @@ public class Race {
 	
 	public List<String> getRequirements() {
 
-//		MAkes no sense!!! Even if Eclipse suggested it
-//		return (List<String>) requirements;
+
 		
 		List<String> lst = new ArrayList<>(requirements);
 		//lst.sort((a, b) -> a.compareTo(b));
